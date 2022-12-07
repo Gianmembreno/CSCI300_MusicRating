@@ -1,15 +1,30 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-$host = "localhost";
-$username = "id19971871_user";
-$password = "!c9wp/5\qDAV3Y9";
-$dbname = "id19971871_harmonydatabase";
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
+<body>
+    <h1>Welcome To Harmony</h1>
+    <h3>Created by: Names</h3>
 
-if(mysqli_connect_errno()){
-    die("Connection Error:" . mysqli_connect_error());
-}
+    <h4>Description ...........</h4>
+    <br>
+    <br>
 
-echo "Connection Successful,";
-?>
+    <form action="register-page.php" method="POST">
+        <button>Signup</button>
+    </form>
+
+    <form action="login-page.php" method="POST">
+        <button a>Login</button>
+    </form>
+
+</body>
+
+</html>
