@@ -13,7 +13,6 @@
 <body>
     <h1>Sing Up</h1>
     <form action="user-manipulation.php" method="post">
-        <?php include('errors.php'); ?>
 
         <label for="username">Username</label>
         <input type="text" name="username" id="username">

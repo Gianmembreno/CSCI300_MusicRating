@@ -1,5 +1,6 @@
 <?php
- 
+ include 'config.php';
+
 // Starting the session, to use and
 // store data in session variable
 session_start();
@@ -57,21 +58,33 @@ if (isset($_GET['logout'])) {
     <?php endif ?>
 
     <h3>Reviews</h3>
-             
+    <a href="add-review.php" class="button">+</a>
     <table>
         <thead>
             <th>Song Id</th>
             <th>Song Name</th>
             <th>Review</th>
             <th>Rating</th>
+            <th>Action</th>
         </thead>
         <tbody>
-            <tr>
-                <td>t</td>
-                <td>e</td>
-                <td>s</td>
-                <td>t</td>
-            </tr>
+            <?php
+                $sqlReview = "SELECT * FROM reviews";
+                $resultReview = mysqli_query($conn, $sqlReview);
+            
+                while($row = mysqli_fetch_assoc($resultReview)){
+                ?>
+                <tr>
+                    <td><?php echo $row['artistName']?></td>
+                    <td><?php echo $row['songName']?></td>
+                    <td><?php echo $row['review']?></td>
+                    <td><?php echo $row['rating']?></td>
+                    <td>
+                        <a href="edit.php?id=<?php echo $row['songID']?>"></a>
+                        <a href="delete.php?id=<?php echo $row['songID']?>"></a>
+                    </td>
+                </tr>
+            <?php }  ?>
         </tbody>
     </table>
 </body>

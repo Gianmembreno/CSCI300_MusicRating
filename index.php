@@ -11,9 +11,8 @@
 
 <body>
     <h1>Welcome To Harmony</h1>
-    <h3>Created by: Names</h3>
 
-    <h4>Description ...........</h4>
+    <h4>A Music Rating Plataform <h4>
     <br>
     <br>
 
@@ -22,7 +21,7 @@
     </form>
 
     <form action="login-page.php" method="POST">
-        <button a>Login</button>
+        <button>Login</button>
     </form>
 
 </body>
