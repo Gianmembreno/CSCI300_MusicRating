@@ -58,7 +58,8 @@ if (isset($_GET['logout'])) {
     <?php endif ?>
 
     <h3>Reviews</h3>
-    <a href="add-review.php" class="button">+</a>
+    <a href="add-review.php" class="button">ADD</a>
+    <!-- <a href=".php" class="button">SEARCH</a> -->
     <table>
         <thead>
             <th>Song Id</th>
@@ -69,7 +70,8 @@ if (isset($_GET['logout'])) {
         </thead>
         <tbody>
             <?php
-                $sqlReview = "SELECT * FROM reviews";
+                $currId = $_SESSION['userID'];
+                $sqlReview = "SELECT * FROM reviews WHERE userID = '$currId'";
                 $resultReview = mysqli_query($conn, $sqlReview);
             
                 while($row = mysqli_fetch_assoc($resultReview)){

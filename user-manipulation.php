@@ -5,9 +5,9 @@ session_start();
 //Declaring Variables
 $username = "";
 $email    = "";
+$tester_variable = "tester";
 $errors = array();
 $_SESSION['success'] = "";
-$currId = 0;
 
 if (isset($_POST['register_user'])){
 
@@ -15,7 +15,7 @@ if (isset($_POST['register_user'])){
     // $email = mysqli_real_escape_string($conn, $_POST['email']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password_1 = mysqli_real_escape_string($conn, $_POST['password']);
-    $currId = rand();
+    $currId = random_int(0,100000);
 
     // if (empty($email)) { array_push($errors, "Email is required"); }
     if (empty($username)) { array_push($errors, "Username is required"); }
@@ -26,8 +26,7 @@ if (isset($_POST['register_user'])){
         //$password = md5($password_1);
          
         // Inserting data into table
-        $query = "INSERT INTO users (userName, userID, userPassword) VALUES('$username', '$currId', '$password')";
-         
+        $query = "INSERT INTO users (userID, firstName, lastName, userName, userEmail, userPassword VALUES ('$currId','$tester_variable','$tester_variable','$username', '$tester_variable', '$password')";
         mysqli_query($conn, $query);
   
         // Storing username of the logged in user,

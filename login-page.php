@@ -15,8 +15,6 @@
     <h1>Log In</h1>
     <form action="login-page.php" method="post">
 
-        <?php include('error.php'); ?>
-
         <label for="username">Username</label>
         <input type="text" name="username" id="username">
         <label for="password">Password</label>

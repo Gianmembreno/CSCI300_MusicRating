@@ -8,13 +8,22 @@ if(isset($_POST['submitReview'])){
     $songReview = $_POST['songReview'];
     $songRating = $_POST['songRating'];
     $currId = $_SESSION['userID'];
-    $reviewID = rand();
-    $songID = rand();
+    $reviewID = random_int(0,100000);
+    $songID = random_int(0,100000);
+    $artistID = random_int(0,100000);
 
+
+
+    $sqlInsert3 = "INSERT INTO artists (artistID, artistName) VALUES ('$artistID','$songArtist')";
+
+    $sqlInsert2 = "INSERT INTO songs (songID, songName, artistID, songGenre, songDuration, releaseDate, artistName) 
+    VALUES ('$songID','$songName','$artistID','blank','00:02:00','2022-1-1','$songArtist')";
 
     $sqlInsert = "INSERT INTO reviews (reviewID, userID, songID, review, rating, songName, artistName) 
     VALUES ($reviewID, $currId ,$songID, '$songReview', '$songRating' ,'$songName', '$songArtist')";
     
+    $result3 = mysqli_query($conn, $sqlInsert3);
+    $result2 = mysqli_query($conn, $sqlInsert2);
     $result = mysqli_query($conn, $sqlInsert);
 
     if($result) {
@@ -22,5 +31,4 @@ if(isset($_POST['submitReview'])){
     } else {
         echo "Failed: " . mysqli_error($conn);
     }
-
 }
