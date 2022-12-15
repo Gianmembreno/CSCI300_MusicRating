@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$username = "id19971871_user";
-$password = "!c9wp/5\qDAV3Y9";
-$dbname = "id19971871_harmonydatabase";
+$username = "id19971871_tester";
+$password = "GG[umP2c!OmU1}I7";
+$dbname = "id19971871_csci300";
 
 $conn = mysqli_connect($host, $username, $password, $dbname) or die ("Error connecting to database");
 
